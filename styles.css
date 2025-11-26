@@ -1,0 +1,197 @@
+/* ========== GLOBAL ========== */
+:root{
+  --pink-500: #ff80b5;
+  --pink-600: #ff5f9e;
+  --bg: #ffeef6;
+  --accent: #ff76b3;
+  --muted: #7a4a5a;
+}
+
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after { box-sizing: inherit; }
+
+body{
+  margin: 0;
+  font-family: "Poppins", Arial, sans-serif;
+  background: var(--bg);
+  color: #3b2a34;
+}
+
+/* ========== NAV ========== */
+nav{
+  background: var(--pink-500);
+  padding: 15px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+.logo{
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+nav ul{
+  list-style: none;
+  display: flex;
+  gap: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a{
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform .15s, opacity .15s;
+}
+
+nav a:hover{
+  transform: scale(1.05);
+  opacity: 0.95;
+  text-shadow: 0 1px 4px rgba(255,255,255,0.2);
+}
+
+/* Ensure clicked sections sit below the nav */
+.section, header, .section--home {
+  scroll-margin-top: 100px; /* adjust if nav height changes */
+}
+
+/* ========== HOME ========== */
+.section--home{
+  padding: 120px 0 80px;
+  text-align: center;
+}
+
+.home-inner{
+  max-width: 920px;
+  margin: 0 auto;
+  padding-left: 40px; /* shift inner content a little left visually */
+}
+
+.home-inner h1{
+  color: var(--pink-600);
+  font-size: 34px;
+  margin: 0 0 8px;
+}
+
+.lead{
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* ========== SECTION GENERAL ========== */
+/* sections are slightly left-shifted by giving larger left padding */
+.section{
+  padding: 100px 80px 60px;
+  padding-left: 120px; /* lebih ke kiri sesuai request */
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* center titles for visual balance */
+.section-title{
+  color: var(--pink-600);
+  font-size: 28px;
+  margin: 0 0 18px;
+  text-align: center; /* khusus agar judul "Produk Kami" di tengah */
+}
+
+/* small text box */
+.text-box{
+  background: #fff;
+  padding: 20px 22px;
+  border-radius: 12px;
+  max-width: 760px;
+  box-shadow: 0 4px 10px rgba(255,140,180,0.12);
+  color: #5b3a47;
+}
+
+/* ========== PRODUK GRID ========== */
+.produk-list{
+  display: flex;
+  gap: 25px;
+  margin-top: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* product card */
+.card{
+  width: 220px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(255,140,180,0.25);
+  border: 1px solid rgba(255,200,220,0.6);
+  transition: transform .25s, box-shadow .25s;
+}
+
+.card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(255,120,170,0.32);
+}
+
+.card img{
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.card h3{
+  margin: 8px 0 6px;
+  color: var(--pink-600);
+  font-size: 16px;
+}
+
+.price{
+  color: var(--accent);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.btn{
+  display: inline-block;
+  padding: 9px 16px;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ========== FOOTER ========== */
+footer{
+  text-align: center;
+  padding: 18px;
+  margin-top: 36px;
+  background: var(--pink-500);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 820px){
+  nav{ padding: 12px 20px; }
+  .section{ padding-left: 28px; padding-right: 28px; }
+  .home-inner{ padding-left: 12px; }
+  .produk-list{ gap: 14px; }
+  .card{ width: 46%; }
+}
+
+@media (max-width: 480px){
+  .card{ width: 100%; }
+  nav ul{ gap: 12px; font-size: 14px; }
+  .section{ padding-left: 18px; padding-right: 18px; padding-top: 90px; }
+}
